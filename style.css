@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  backdrop-filter: blur(2px);
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+.avatar-section img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border: 3px solid #0077b6;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.profile-details h2 {
+  margin: 0.5rem 0;
+  color: #222;
+}
+
+.current-time {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #023e8a;
+}
+
+.social-links a:focus {
+  outline: 2px solid #0077b6;
+  outline-offset: 2px;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+}
+
+section h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #111;
+}
+
+section li {
+  padding: 0.3rem 0;
+}
+
+
+@media (min-width: 700px) {
+  .profile-card {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .avatar-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-details {
+    flex: 2;
+    padding-left: 20px;
+  }
+
+  .social-footer {
+    margin-top: auto;
+  }
+}
