@@ -12,7 +12,33 @@ body {
   height: 100vh;
   margin: 0;
   backdrop-filter: blur(2px);
+  position: relative; 
 }
+
+
+nav {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #ff4d4d;
+  outline: none;
+}
+
 
 .profile-card {
   display: flex;
@@ -25,6 +51,8 @@ body {
   max-width: 500px;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; 
+  z-index: 1;
 }
 
 .profile-card:hover {
@@ -62,13 +90,19 @@ body {
 }
 
 
+.social-footer {
+  margin-top: 1rem; 
+  position: relative;
+  z-index: 0;
+}
+
 .social-links {
   display: flex;
   justify-content: center;
   gap: 1rem;
   list-style: none;
   padding: 0;
-  margin-top: 1.5rem;
+  margin: 0; 
 }
 
 .social-links a {
@@ -127,3 +161,266 @@ section li {
     margin-top: auto;
   }
 }
+
+
+@media (max-width: 600px) {
+  nav {
+    top: 10px;
+    right: 20px;
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+[data-testid="test-about-page"] {
+  background: rgba(255, 255, 255, 0.95);
+  width: 90%;
+  max-width: 900px;
+  margin: 100px auto; /* space under navbar */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+[data-testid="test-about-page"] section {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+[data-testid="test-about-page"] h2 {
+  color: #111;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+[data-testid="test-about-page"] p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+
+
+
+@media (max-width: 900px) {
+  [data-testid="test-about-page"] {
+    max-width: 95%;
+    padding: 30px;
+    margin-top: 90px;
+  }
+
+  [data-testid="test-about-page"] h2 {
+    font-size: 1.3rem;
+  }
+
+  [data-testid="test-about-page"] p {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  [data-testid="test-about-page"] {
+    width: 95%;
+    padding: 20px;
+    margin-top: 80px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  [data-testid="test-about-page"] section {
+    padding: 1rem;
+  }
+
+  [data-testid="test-about-page"] h2 {
+    font-size: 1.15rem;
+    text-align: center;
+  }
+
+  [data-testid="test-about-page"] p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+
+
+
+/* ===== Contact Page Styling ===== */
+[data-testid="test-contact-page"] {
+  background: rgba(255, 255, 255, 0.95);
+  width: 90%;
+  max-width: 900px;
+  margin: 120px auto; /* spacing below navbar */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.contact-card {
+  width: 100%;
+  background: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card h2 {
+  text-align: center;
+  color: #111;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-card p {
+  text-align: center;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0077b6;
+  outline: none;
+}
+
+/* Error and Success Messages */
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  min-height: 1rem;
+}
+
+.success {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+/* Submit Button */
+button[data-testid="test-contact-submit"] {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button[data-testid="test-contact-submit"]:hover {
+  background-color: #0044cc;
+}
+
+/* ===== Responsiveness ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  [data-testid="test-contact-page"] {
+    width: 95%;
+    padding: 30px;
+  }
+
+  .contact-card {
+    padding: 1.5rem 2rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  [data-testid="test-contact-page"] {
+    width: 95%;
+    padding: 20px;
+    margin-top: 100px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .contact-card {
+    padding: 1.2rem;
+  }
+
+  .contact-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+  }
+
+  button[data-testid="test-contact-submit"] {
+    padding: 0.8rem 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
